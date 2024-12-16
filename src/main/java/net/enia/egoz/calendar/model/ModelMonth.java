@@ -9,6 +9,25 @@ import java.util.Calendar;
 public class ModelMonth
 {
 
+    private int year;
+    private int month;
+
+
+    public ModelMonth(int year, int month)
+    {
+        this.year = year;
+        this.month = month;
+    }
+
+
+    public ModelMonth()
+    {
+        Calendar calendar = Calendar.getInstance();
+        year = calendar.get(Calendar.YEAR);
+        month = calendar.get(Calendar.MONTH) + 1;
+    }
+
+
     public int getYear()
     {
         return year;
@@ -31,23 +50,4 @@ public class ModelMonth
     {
         this.month = month;
     }
-
-
-    public ModelMonth(int year, int month)
-    {
-        this.year = year;
-        this.month = month;
-    }
-
-
-    public ModelMonth()
-    {
-        Calendar calendar = Calendar.getInstance();
-        year = calendar.get(Calendar.YEAR);
-        month = calendar.get(Calendar.MONTH) + 1;
-    }
-
-
-    private int year;
-    private int month;
 }

@@ -22,6 +22,16 @@ import java.awt.geom.Rectangle2D;
 public class PanelMonth extends DynamicCell<ModelMonth>
 {
 
+    public static final String[] MONTH = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+    private final Point mouse = new Point();
+    private int year;
+    private CalendarCellListener calendarCellListener;
+    public PanelMonth()
+    {
+        init();
+    }
+
+
     public int getYear()
     {
         return year;
@@ -32,17 +42,6 @@ public class PanelMonth extends DynamicCell<ModelMonth>
     {
         this.year = year;
         init(new ModelMonth(year - 1, 9));
-    }
-
-
-    private final Point mouse = new Point();
-    private int year;
-    private CalendarCellListener calendarCellListener;
-
-
-    public PanelMonth()
-    {
-        init();
     }
 
 
@@ -151,9 +150,6 @@ public class PanelMonth extends DynamicCell<ModelMonth>
         });
 
     }
-
-
-    public static final String[] MONTH = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
 
 
     public CalendarCellListener getCalendarCellListener()

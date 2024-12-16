@@ -10,6 +10,38 @@ import java.util.Date;
 public class ModelDate
 {
 
+    private int year;
+    private int month;
+    private int day;
+
+
+    public ModelDate(int year, int month, int day)
+    {
+        this.year = year;
+        this.month = month;
+        this.day = day;
+    }
+
+
+    public ModelDate(Date date)
+    {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        year = calendar.get(Calendar.YEAR);
+        month = calendar.get(Calendar.MONTH) + 1;
+        day = calendar.get(Calendar.DATE);
+    }
+
+
+    public ModelDate()
+    {
+        Calendar calendar = Calendar.getInstance();
+        year = calendar.get(Calendar.YEAR);
+        month = calendar.get(Calendar.MONTH) + 1;
+        day = calendar.get(Calendar.DATE);
+    }
+
+
     public int getYear()
     {
         return year;
@@ -44,38 +76,6 @@ public class ModelDate
     {
         this.day = day;
     }
-
-
-    public ModelDate(int year, int month, int day)
-    {
-        this.year = year;
-        this.month = month;
-        this.day = day;
-    }
-
-
-    public ModelDate(Date date)
-    {
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(date);
-        year = calendar.get(Calendar.YEAR);
-        month = calendar.get(Calendar.MONTH) + 1;
-        day = calendar.get(Calendar.DATE);
-    }
-
-
-    public ModelDate()
-    {
-        Calendar calendar = Calendar.getInstance();
-        year = calendar.get(Calendar.YEAR);
-        month = calendar.get(Calendar.MONTH) + 1;
-        day = calendar.get(Calendar.DATE);
-    }
-
-
-    private int year;
-    private int month;
-    private int day;
 
 
     @Override

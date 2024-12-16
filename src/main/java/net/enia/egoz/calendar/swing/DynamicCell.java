@@ -29,6 +29,24 @@ import java.util.List;
 public class DynamicCell<E> extends JPanel
 {
 
+    private final List<DynamicCellListener> events = new ArrayList<>();
+    private final List<E> models = new ArrayList<>();
+    private DynamicCellRender<E> dynamicCellRender;
+    private int selectedIndex;
+    private int pressIndex = -1;
+    private double viewLocation = -0.5f;
+    private int row = 6;
+    private int column = 7;
+    private float scale = 1f;
+    private float alpha = 1f;
+
+
+    public DynamicCell()
+    {
+        init();
+    }
+
+
     public int getSelectedIndex()
     {
         return selectedIndex;
@@ -54,27 +72,27 @@ public class DynamicCell<E> extends JPanel
     }
 
 
-    public void setRow(int row)
-    {
-        this.row = row;
-    }
-
-
-    public void setColumn(int column)
-    {
-        this.column = column;
-    }
-
-
     public int getRow()
     {
         return row;
     }
 
 
+    public void setRow(int row)
+    {
+        this.row = row;
+    }
+
+
     public int getColumn()
     {
         return column;
+    }
+
+
+    public void setColumn(int column)
+    {
+        this.column = column;
     }
 
 
@@ -107,24 +125,6 @@ public class DynamicCell<E> extends JPanel
     public void addEventDynamicCellListenter(DynamicCellListener event)
     {
         events.add(event);
-    }
-
-
-    private final List<DynamicCellListener> events = new ArrayList<>();
-    private DynamicCellRender<E> dynamicCellRender;
-    private final List<E> models = new ArrayList<>();
-    private int selectedIndex;
-    private int pressIndex = -1;
-    private double viewLocation = -0.5f;
-    private int row = 6;
-    private int column = 7;
-    private float scale = 1f;
-    private float alpha = 1f;
-
-
-    public DynamicCell()
-    {
-        init();
     }
 
 

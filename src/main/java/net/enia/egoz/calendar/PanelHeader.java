@@ -19,6 +19,10 @@ import java.awt.event.ActionListener;
 public class PanelHeader extends JPanel
 {
 
+    private JButton buttonDate;
+    private JButton buttonNow;
+
+
     public PanelHeader()
     {
         init();
@@ -62,10 +66,6 @@ public class PanelHeader extends JPanel
     {
         buttonDate.setText(text);
     }
-
-
-    private JButton buttonDate;
-    private JButton buttonNow;
 
 
     private class HeaderLayout implements LayoutManager

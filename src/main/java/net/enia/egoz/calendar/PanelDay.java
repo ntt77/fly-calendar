@@ -28,6 +28,18 @@ import java.util.Date;
 public class PanelDay extends DynamicCell<ModelDate>
 {
 
+    public static final String[] DATE = {"Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"};
+    private final Point mouse = new Point();
+    private ModelDate selectedDate;
+    private ModelMonth month;
+    private CalendarCellListener calendarCellListener;
+    private PanelDateListener panelDateListener;
+    public PanelDay()
+    {
+        init();
+    }
+
+
     public void setPanelDateListener(PanelDateListener panelDateListener)
     {
         this.panelDateListener = panelDateListener;
@@ -44,20 +56,6 @@ public class PanelDay extends DynamicCell<ModelDate>
     {
         this.month = month;
         init(getDisplayDate(month));
-    }
-
-
-    private ModelDate selectedDate;
-    private final Point mouse = new Point();
-    private ModelMonth month;
-    public static final String[] DATE = {"Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"};
-    private CalendarCellListener calendarCellListener;
-    private PanelDateListener panelDateListener;
-
-
-    public PanelDay()
-    {
-        init();
     }
 
 

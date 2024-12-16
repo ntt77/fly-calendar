@@ -33,11 +33,16 @@ import java.util.List;
 public class Calendar extends JPanel
 {
 
+    private final List<CalendarSelectedListener> events = new ArrayList<>();
     private Animator animator;
     private ModelDate date = new ModelDate();
     private int selected = 1;
     private CalendarEventCellRender calendarEventCellRender = new DefaultCalendarEventCellRender();
-    private final List<CalendarSelectedListener> events = new ArrayList<>();
+    private PanelHeader panelHeader;
+    private JPanel panel;
+    private PanelDay panelDay;
+    private PanelMonth panelMonth;
+    private PanelYear panelYear;
 
 
     public Calendar()
@@ -341,13 +346,6 @@ public class Calendar extends JPanel
     {
         events.add(event);
     }
-
-
-    private PanelHeader panelHeader;
-    private JPanel panel;
-    private PanelDay panelDay;
-    private PanelMonth panelMonth;
-    private PanelYear panelYear;
 
 
     private class CalendarLayout implements LayoutManager

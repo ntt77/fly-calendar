@@ -21,16 +21,8 @@ import java.awt.geom.Rectangle2D;
 public class PanelYear extends DynamicCell<Integer>
 {
 
-    public void setYear(int year)
-    {
-        init(year - 4);
-    }
-
-
     private final Point mouse = new Point();
     private CalendarCellListener calendarCellListener;
-
-
     public PanelYear()
     {
         init();
@@ -127,5 +119,11 @@ public class PanelYear extends DynamicCell<Integer>
         int start = getModels().get(0);
         int end = getModels().get(getModels().size() - 1);
         return start + " - " + end;
+    }
+
+
+    public void setYear(int year)
+    {
+        init(year - 4);
     }
 }

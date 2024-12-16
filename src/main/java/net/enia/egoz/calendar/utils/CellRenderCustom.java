@@ -24,6 +24,15 @@ import java.awt.image.BufferedImage;
 public abstract class CellRenderCustom<E> implements DynamicCellRender<E>
 {
 
+    private Point mouse;
+
+
+    public CellRenderCustom(Point mouse)
+    {
+        this.mouse = mouse;
+    }
+
+
     public Point getMouse()
     {
         return mouse;
@@ -34,15 +43,6 @@ public abstract class CellRenderCustom<E> implements DynamicCellRender<E>
     {
         this.mouse = mouse;
     }
-
-
-    public CellRenderCustom(Point mouse)
-    {
-        this.mouse = mouse;
-    }
-
-
-    private Point mouse;
 
 
     @Override
